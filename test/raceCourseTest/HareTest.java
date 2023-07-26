@@ -2,10 +2,10 @@ package raceCourseTest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import raceCourse.Hare;
-import tortoioseAndHare.enums.HareMoveType;
+import tortoioseAndHare.contenders.Hare;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static tortoioseAndHare.enums.HareMoveType.*;
 
 class HareTest {

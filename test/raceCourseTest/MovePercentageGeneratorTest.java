@@ -1,6 +1,7 @@
 package raceCourseTest;
 
 import org.junit.jupiter.api.Test;
+import tortoioseAndHare.contenders.MovePercentageGenerator;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

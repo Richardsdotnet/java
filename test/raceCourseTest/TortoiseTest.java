@@ -1,8 +1,11 @@
 package raceCourseTest;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import tortoioseAndHare.contenders.Tortoise;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static tortoioseAndHare.enums.TortoiseMoveType.*;
 
 class TortoiseTest {
     private Tortoise tortoise;
