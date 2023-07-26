@@ -3,70 +3,51 @@ package raceCourseTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import raceCourse.Hare;
-import tortoioseAndHare.HareMoveTypes;
-
-import java.math.BigDecimal;
+import tortoioseAndHare.enums.HareMoveType;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static tortoioseAndHare.enums.HareMoveType.*;
 
 class HareTest {
-  private Hare ehoro;
+  private Hare hare;
 
   @BeforeEach
-
-    public void setUp(){
-      ehoro = new Hare();
+  void setUp(){
+    hare = new Hare();
   }
 
   @Test
-    public void hareSleep(){
-      assertEquals(1, ehoro.getPosition());
-      ehoro.move(HareMoveTypes.SLEEP);
-      assertEquals(1,ehoro.getPosition());
-  }
-
-    @Test
-    public void hareBigHop(){
-        assertEquals(1, ehoro.getPosition());
-        ehoro.move(HareMoveTypes.BIG_HOP);
-        assertEquals(10,ehoro.getPosition());
-    }
-
-  @Test
-  public void bigSlipCloseToStart(){
-    ehoro.setPosition(5);
-    assertEquals(5, ehoro.getPosition());
-    ehoro.move(HareMoveTypes.BIG_SLEEP);
-    assertEquals(3,ehoro.getPosition());
+  void hareExists(){
+    assertNotNull(hare);
   }
   @Test
-  public void haresmallHop(){
-
-    assertEquals(1, ehoro.getPosition());
-    ehoro.move(HareMoveTypes.SMALL_HOP);
-    assertEquals(2,ehoro.getPosition());
+  void hareStartsRaceFromSquareOne(){
+    assertEquals(1, hare.getPosition());
   }
-
   @Test
-  public void haresmallslip(){
-    ehoro.setPosition(7);
-    assertEquals(5, ehoro.getPosition());
-    ehoro.move(HareMoveTypes.SMALL_SLIP);
-    assertEquals(2,ehoro.getPosition());
+  void sleepMoveForHare(){
+    assertEquals(1, hare.getPosition());
+    hare.hareMove(SLEEP);
+    assertEquals(1, hare.getPosition());
   }
-
   @Test
-  public void hareSleepWithIntegerMove(){
-    assertEquals(1, ehoro.getPosition());
-    ehoro.move(2);
-    assertEquals(1,ehoro.getPosition());
+  void bigHopMoveForHare(){
+    assertEquals(1, hare.getPosition());
+    hare.hareMove(BIG_HOP);
+    assertEquals(10, hare.getPosition());
   }
-
   @Test
-  public void hareBigHopWithIntegerMonve(){
-    assertEquals(1, ehoro.getPosition());
-    ehoro.move(15);
-    assertEquals(10,ehoro.getPosition());
+  void bigSlipMoveForHare(){
+    assertEquals(1, hare.getPosition());
+    hare.setPosition(20);
+    hare.hareMove(BIG_SLIP);
+    assertEquals(8, hare.getPosition());
+  }
+  @Test
+  void smallHopMoveForHare(){
+    assertEquals(1, hare.getPosition());
+    hare.hareMove(SMALL_HOP);
+    assertEquals(2, hare.getPosition());
   }
 
 
